@@ -1,0 +1,18 @@
+doujin structure:
+
+- id
+- images
+- title
+- tags
+- page count
+
+GET /[:id:]/
+returns a html page of the doujin that lists 
+title, tags, preview thumb of pages, like nh
+
+GET /[:id:]/[:page_no:]/
+returns a html page where id:page_no image 
+is 90% of the screen or something, with arrow keys and js
+to navigate + - page, last page + takes you to /GET/[:id:]/
+
+tags should be searchable.
