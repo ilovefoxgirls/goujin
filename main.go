@@ -7,16 +7,17 @@ import (
 )
 
 func handleIndex(c *gin.Context) {
-	c.HTML(200, "page/index.tmpl", gin.H{
-		"title": "Index page",
+	c.HTML(200, "main_page.tmpl", gin.H{
+		"page_title": "Index page",
 	})
 }
 
 func main() {
 	fmt.Println("test")
 	router := gin.Default()
-	router.LoadHTMLGlob("templates/*/*.tmpl")
+	router.LoadHTMLGlob("templates/*.tmpl")
 
+	router.Static("/static", "./static")
 	router.GET("/", handleIndex)
 	router.GET("/:id/", func(c *gin.Context) {
 		rid := c.Param("id")
